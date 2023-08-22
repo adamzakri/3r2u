@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">R2u01</string>
+    <string name="add_item">add description</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>
