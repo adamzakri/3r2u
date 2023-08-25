@@ -131,6 +131,7 @@ public class ChatActivity extends AppCompatActivity implements RecyclerUserAdapt
                                     Intent loginIntent = new Intent(ChatActivity.this, LoginActivity.class);
                                     loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(loginIntent);
+                                    finish();
                                 }else if (id == R.id.nav_items) {
                                     // Handle navigation to ChatActivity
                                     Intent chatsIntent = new Intent(ChatActivity.this, CollectorActivity.class);
