@@ -2,10 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+
+
 
     <application
         android:allowBackup="true"
@@ -17,7 +21,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.R2u01"
         tools:targetApi="31">
-
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".ProfileCollectorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChattingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerUserAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerItemsList"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -31,9 +62,22 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="AIzaSyCuBp-Fnefr1Xe5RxLgxMh3D2OzOQzxyaE" />
 
-        <!-- LoginActivity as the first activity -->
+        <activity
+            android:name=".MapsActivityCollector"
+            android:exported="false"
+            android:label="@string/title_activity_maps_collector" />
+        <activity
+            android:name=".ItemLocationRicycler"
+            android:exported="false"
+            android:label="@string/title_activity_item_location_ricycler" />
+        <activity
+            android:name=".CollectorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerActivity"
+            android:exported="false" /> <!-- LoginActivity as the first activity -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -42,22 +86,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Other activities (if any) -->
+        </activity> <!-- Other activities (if any) -->
         <activity
             android:name=".MapActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="RegisterActivity" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

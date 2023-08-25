@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Basic Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <!-- Red Tones -->
+    <color name="red">#FFFF0000</color>
+    <color name="dark_red">#FF8B0000</color>
+    <color name="light_red">#FFFF8A80</color>
+
+    <!-- Green Tones -->
+    <color name="green">#FF00FF00</color>
+    <color name="dark_green">#FF006400</color>
+    <color name="light_green">#99D899</color>
+    <color name="light_green_background">#BAEFBD</color>
+
+    <!-- Blue Tones -->
+    <color name="blue">#FF0000FF</color>
+    <color name="dark_blue">#FF00008B</color>
+    <color name="light_blue">#FFADD8E6</color>
+
+    <!-- Yellow Tones -->
+    <color name="yellow">#FFFFFF00</color>
+    <color name="dark_yellow">#FFBDB76B</color>
+    <color name="light_yellow">#FFFFFFE0</color>
+
+    <!-- Orange Tones -->
+    <color name="orange">#FFFFA500</color>
+    <color name="dark_orange">#FFFF8C00</color>
+    <color name="light_orange">#FFFFD700</color>
+
+    <!-- Purple Tones -->
+    <color name="purple">#FF800080</color>
+    <color name="dark_purple">#FF9932CC</color>
+    <color name="light_purple">#FFE6E6FA</color>
+
+    <!-- Gray Tones -->
+    <color name="gray">#FF808080</color>
+    <color name="dark_gray">#FFA9A9A9</color>
+    <color name="light_gray">#FFD3D3D3</color>
+
+    <!-- Brown Tones -->
+    <color name="brown">#FFA52A2A</color>
+    <color name="dark_brown">#FF8B4513</color>
+    <color name="light_brown">#FFCD853F</color>
+
+    <color name="primary_color">#6200EE</color>
+    <color name="primary_dark_color">#3700B3</color>
+    <color name="accent_color">#03DAC5</color>
+    <color name="text_primary_color">#000000</color>
+    <color name="text_secondary_color">#666666</color>
+    <color name="background_color">#FFFFFF</color>
+
+
 </resources>

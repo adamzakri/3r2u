@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/nav_profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_add_items"
+            android:title="Add Items" />
+        <item
+            android:id="@+id/nav_manage_items"
+            android:title="Manage Items" />
+        <item
+            android:id="@+id/nav_chats"
+            android:title="Chats" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout" />
+
+</menu>

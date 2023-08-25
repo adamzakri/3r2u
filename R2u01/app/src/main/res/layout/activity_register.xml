@@ -7,26 +7,54 @@
     android:padding="16dp"
     tools:context=".RegisterActivity">
 
+    <TextView
+        android:id="@+id/textViewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="3R2U"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold" />
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:textColor="@color/black"
         android:inputType="textEmailAddress"
         android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:hint="Username" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp" />
+
+    <Spinner
+        android:id="@+id/spinnerUserType"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_circle"
+        android:layout_gravity="center"
         android:text="Register" />
 
 </LinearLayout>
+

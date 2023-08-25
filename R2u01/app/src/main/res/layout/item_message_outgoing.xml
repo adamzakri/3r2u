@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/item_message_sender.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginVertical="5dp"
+    android:layout_marginEnd="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:padding="8dp"
+        android:background="@drawable/sender_chat_bubble"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/messageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="2dp"
+            android:text="yooooo"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:id="@+id/timestampTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9sp"
+            android:text="1:11pm"
+            android:layout_below="@id/messageTextView"
+            android:layout_gravity="end"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

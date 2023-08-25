@@ -2,4 +2,15 @@
     <string name="app_name">R2u01</string>
     <string name="add_item">add description</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string-array name="user_types_array">
+        <item>Collector</item>
+        <item>Recycler</item>
+    </string-array>
+    <string name="title_activity_item_location_ricycler">ItemLocationRicycler</string>
+    <string name="title_activity_maps_collector">MapsActivityCollector</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyCuBp-Fnefr1Xe5RxLgxMh3D2OzOQzxyaE
+    </string>
 </resources>

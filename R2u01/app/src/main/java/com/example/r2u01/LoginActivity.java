@@ -14,6 +14,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -35,7 +40,10 @@ public class LoginActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
 
         firebaseAuth = FirebaseAuth.getInstance();
-
+        if (firebaseAuth.getCurrentUser() != null) {
+            // User is already logged in, proceed to appropriate activity
+            redirectToAppropriateActivity();
+        }
         // Set click listener for the login button
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                 // Perform login logic
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
+
 
                 // Check if the username and password are valid
                 if (username.isEmpty() || password.isEmpty()) {
@@ -70,15 +79,67 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Login successful, navigate to the main activity
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish(); // Optional: Close the login activity to prevent going back to it
+                            String uid = firebaseAuth.getCurrentUser().getUid();
+                            DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(uid);
+                            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    User user = dataSnapshot.getValue(User.class);
+                                    if (user != null) {
+                                        String userType = user.getUserType();
+                                        if ("Collector".equals(userType)) {
+                                            // User is a collector, start CollectorActivity
+                                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                                            startActivity(intent);
+                                            finish(); // Optional: Close the login activity
+                                        } else if ("Recycler".equals(userType)) {
+                                            // User is a recycler, start RecyclerActivity
+                                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                                            startActivity(intent);
+                                            finish(); // Optional: Close the login activity
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    // Handle database error
+                                }
+                            });
                         } else {
                             // Login failed, display an error message
                             Toast.makeText(LoginActivity.this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+    private void redirectToAppropriateActivity() {
+        String uid = firebaseAuth.getCurrentUser().getUid();
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(uid);
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                if (user != null) {
+                    String userType = user.getUserType();
+                    if ("Collector".equals(userType)) {
+                        // User is a collector, start CollectorActivity
+                        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                        startActivity(intent);
+                        finish(); // Optional: Close the login activity
+                    } else if ("Recycler".equals(userType)) {
+                        // User is a recycler, start RecyclerActivity
+                        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                        startActivity(intent);
+                        finish(); // Optional: Close the login activity
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle database error
+            }
+        });
     }
 }

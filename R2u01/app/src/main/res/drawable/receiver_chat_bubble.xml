@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/receiver_chat_bubble.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#EFEFF4" /> <!-- Set the background color for the receiver bubble -->
+    <corners android:topRightRadius="20dp"
+        android:topLeftRadius="20dp"
+    android:bottomRightRadius="20dp" /> <!-- Set the corner radius for rounded corners -->
+</shape>
