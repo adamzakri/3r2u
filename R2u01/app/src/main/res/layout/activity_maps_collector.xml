@@ -17,6 +17,7 @@
         android:layout_marginStart="5dp"
         android:background="@drawable/btn_circle"
         android:text="Message Owner"
+        android:visibility="gone"
         android:layout_centerHorizontal="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="16dp" />
